@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>cy</class>
+ <widget class="QWidget" name="cy">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>cy2077-DG-LAB</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton:hover {
+    background-color: #b4befe;       /* 鼠标放上去时变浅 */
+}</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>580</width>
+     <height>480</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>游戏监控</string>
+    </attribute>
+    <widget class="QGroupBox" name="healthGroup">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>380</width>
+       <height>65</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>生命值</string>
+     </property>
+     <widget class="QProgressBar" name="healthBar">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>230</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="value">
+       <number>24</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="healthLabel">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>20</y>
+        <width>130</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>456/456 90%</string>
+      </property>
+     </widget>
+     <zorder>healthLabel</zorder>
+     <zorder>healthBar</zorder>
+    </widget>
+    <widget class="QGroupBox" name="combatGroup">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>380</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>战斗状态</string>
+     </property>
+     <widget class="QLabel" name="combatLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>160</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>⚔️ 非战斗</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="posGroup_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>380</width>
+       <height>90</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <hintingpreference>PreferDefaultHinting</hintingpreference>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="title">
+      <string>位置与速度</string>
+     </property>
+     <widget class="QLabel" name="posLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>350</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>X: 0.0 Y: 0.0 Z: 0.0 速度: 0.0</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="posGroup">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>250</y>
+       <width>380</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>当前任务</string>
+     </property>
+     <widget class="QLabel" name="questTitle">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>360</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>任务:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="questObjective">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>360</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>目标:</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_14">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>10</y>
+       <width>171</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>角色属性</string>
+     </property>
+     <widget class="QTextEdit" name="attrText">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>150</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>150</width>
+        <height>130</height>
+       </size>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>250</y>
+       <width>171</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>经济</string>
+     </property>
+     <widget class="QLabel" name="moneyLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>101</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>欧元: 0</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_path">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>340</y>
+       <width>381</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>游戏文件路径设置</string>
+     </property>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PosLogger目录:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="posLoggerPath">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>20</y>
+        <width>110</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnSelectPosLogger">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>20</y>
+        <width>80</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>浏览...</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="healthStaminaPath">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>60</y>
+        <width>110</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>生命值文件:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnSelectHealthStamina">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>60</y>
+        <width>80</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>浏览...</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>DGLab控制</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>180</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>调试</string>
+     </property>
+     <widget class="QCheckBox" name="debugCheck">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>13</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>终端调试输出</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_7">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>300</y>
+       <width>280</width>
+       <height>90</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>波形选择</string>
+     </property>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>25</y>
+        <width>70</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>A通道波形:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>55</y>
+        <width>70</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>B通道波形:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="waveACombo">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>25</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="waveBCombo">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>55</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_8">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>180</width>
+       <height>90</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>监测选项</string>
+     </property>
+     <widget class="QCheckBox" name="monitorLifeCheck">
+      <property name="geometry">
+       <rect>
+        <x>8</x>
+        <y>23</y>
+        <width>160</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>监测生命值变化</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>54</y>
+        <width>160</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>注：死亡和体力监测始终开启</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_9">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>280</width>
+       <height>140</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>强度参数</string>
+     </property>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>150</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>战斗中基础强度 (0-200):</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>150</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>非战斗基础强度 (0-200):</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>150</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>死亡/体力拉满持续(秒):</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="combatBaseSpin">
+      <property name="geometry">
+       <rect>
+        <x>165</x>
+        <y>20</y>
+        <width>97</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="decimals">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <double>200.000000000000000</double>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="idleBaseSpin">
+      <property name="geometry">
+       <rect>
+        <x>165</x>
+        <y>60</y>
+        <width>97</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="decimals">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <double>200.000000000000000</double>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="deathDurationSpin">
+      <property name="geometry">
+       <rect>
+        <x>165</x>
+        <y>100</y>
+        <width>97</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="decimals">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <double>10.000000000000000</double>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_10">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>9</y>
+       <width>270</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>手动偏移量 (按钮A2/A3/B2/B3)</string>
+     </property>
+     <widget class="QLabel" name="offsetALabel">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>25</y>
+        <width>70</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>A偏移: 0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="offsetBLabel">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>25</y>
+        <width>70</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>B偏移: 0</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_11">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>80</y>
+       <width>270</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>当前设备强度</string>
+     </property>
+     <widget class="QLabel" name="strengthLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>250</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>A: -/- B: -/-</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_12">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>140</y>
+       <width>270</width>
+       <height>250</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>连接二维码</string>
+     </property>
+     <widget class="QLabel" name="qrLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>251</width>
+        <height>211</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>等待二维码生成...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_13">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>390</y>
+       <width>280</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>手动控制 (叠加到自动强度)</string>
+     </property>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>7</x>
+        <y>25</y>
+        <width>271</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>A1/B1: 切换波形 A2/B2: +1偏移 A3/B3: -1偏移</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>10</y>
+       <width>90</width>
+       <height>150</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>通道选择</string>
+     </property>
+     <widget class="QRadioButton" name="radioA">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>20</y>
+        <width>70</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>仅A</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioB">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>60</y>
+        <width>70</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>仅B</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioAB">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>100</y>
+        <width>70</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>A/B</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>390</y>
+       <width>270</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>生命值权重系数</string>
+     </property>
+     <widget class="QDoubleSpinBox" name="doubleSpinBox">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>20</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="decimals">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <double>200.000000000000000</double>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="C:/Users/fzl/Videos/Cyberpunk 2077/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
