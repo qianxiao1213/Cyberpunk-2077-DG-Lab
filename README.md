@@ -126,9 +126,7 @@ Cyberpunk 2077\bin\x64\plugins\cyber_engine_tweaks\mods
 
 ## 七、快捷键
 
-| 快捷键 | 功能 |
-|--------|------|
-| Ctrl+Shift+H | 显示/隐藏软件窗口（游戏中可用） |
+没有
 
 ## 八、注意事项
 
