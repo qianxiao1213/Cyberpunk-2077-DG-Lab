@@ -42,7 +42,7 @@ local function logValues()
 end
 
 local elapsed = 0
-local interval = 1.0
+local interval = 0.05
 
 registerForEvent("onUpdate", function(deltaTime)
     elapsed = elapsed + deltaTime
